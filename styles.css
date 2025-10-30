@@ -1,0 +1,322 @@
+/* Reset y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.author {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+/* Navegación */
+nav {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #667eea;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Secciones */
+section {
+    background: white;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #1e3c72;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 0.5rem;
+}
+
+/* Subsecciones */
+.subsection {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.subsection h3 {
+    color: #2a5298;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Contenedor de código */
+.code-container {
+    background: #282c34;
+    color: #abb2bf;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.code-container pre {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.code-container code {
+    color: #e06c75;
+}
+
+/* Botones */
+button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Área de resultados */
+.resultado {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #e8f5e9;
+    border: 1px solid #4caf50;
+    border-radius: 5px;
+    min-height: 40px;
+    font-family: monospace;
+    display: none;
+}
+
+.resultado.mostrar {
+    display: block;
+}
+
+/* Área de demostración DOM */
+.demo-area {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: white;
+    border: 2px dashed #667eea;
+    border-radius: 5px;
+}
+
+.demo-area > * {
+    margin: 0.5rem 0;
+}
+
+.demo-paragraph {
+    padding: 0.5rem;
+    background: #f0f0f0;
+    border-radius: 3px;
+}
+
+.demo-class {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    background: #e3f2fd;
+    border-radius: 5px;
+}
+
+.demo-selector {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    background: #fff3e0;
+    border-radius: 5px;
+}
+
+#elemento-id {
+    padding: 0.5rem;
+    background: #f0f0f0;
+    border-radius: 3px;
+}
+
+#demo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 300px;
+}
+
+#demo-form input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.demo-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #667eea;
+    text-decoration: none;
+}
+
+.demo-link:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    .subsection h3 {
+        font-size: 1.2rem;
+    }
+
+    .code-container {
+        font-size: 0.8rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mejora de legibilidad del código */
+.code-container pre code {
+    display: block;
+    white-space: pre;
+}
+
+/* Estilo para mensajes de error */
+.resultado.error {
+    background: #ffebee;
+    border-color: #f44336;
+}
+
+/* Estilo para mensajes de éxito */
+.resultado.success {
+    background: #e8f5e9;
+    border-color: #4caf50;
+}
+
+/* Estilo para mensajes de información */
+.resultado.info {
+    background: #e3f2fd;
+    border-color: #2196f3;
+}

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 5: Sintaxis de JavaScript - ISW-512</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tarea 5: Sintaxis de JavaScript</h1>
+        <p class="subtitle">ISW-512 Diseño de Aplicaciones Web</p>
+        <p class="author">Estudiante: Manuel | Profesor: Mit. Sergio González Salazar</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#control-flujo">Control de Flujo</a></li>
+            <li><a href="#bucles">Bucles e Iteración</a></li>
+            <li><a href="#funciones">Funciones</a></li>
+            <li><a href="#operadores">Expresiones y Operadores</a></li>
+            <li><a href="#numeros-fechas">Números y Fechas</a></li>
+            <li><a href="#formateo-texto">Formateo de Texto</a></li>
+            <li><a href="#colecciones">Colecciones Indexadas</a></li>
+            <li><a href="#dom">DOM</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Control de Flujo y Manejo de Errores -->
+        <section id="control-flujo">
+            <h2>1. Control de Flujo y Manejo de Errores</h2>
+            
+            <div class="subsection">
+                <h3>1.1. if...else</h3>
+                <div class="code-container">
+                    <pre><code>let edad = 18;
+if (edad >= 18) {
+    console.log("Eres mayor de edad");
+} else {
+    console.log("Eres menor de edad");
+}</code></pre>
+                </div>
+                <button onclick="ejemploIfElse()">Ejecutar Ejemplo</button>
+                <div id="resultado-if-else" class="resultado"></div>
+            </div>
+
+            <div class="subsection">
+                <h3>1.2. switch</h3>
+                <div class="code-container">
+                    <pre><code>let dia = new Date().getDay();
+switch(dia) {
+    case 0:
+        console.log("Domingo");
+        break;
+    case 1:
+        console.log("Lunes");
+        break;
+    default:
+        console.log("Otro día");
+}</code></pre>
+                </div>
+                <button onclick="ejemploSwitch()">Ejecutar Ejemplo</button>
+                <div id="resultado-switch" class="resultado"></div>
+            </div>
+
+            <div class="subsection">
+                <h3>1.3. try/catch/throw</h3>
+                <div class="code-container">
+                    <pre><code>try {
+    let numero = prompt("Ingresa un número");
+    if (isNaN(numero)) {
+        throw new Error("No es un número válido");
+    }
+    console.log("Número válido: " + numero);
+} catch (error) {
+    console.error("Error: " + error.message);
+}</code></pre>
+                </div>
+                <button onclick="ejemploTryCatch()">Ejecutar Ejemplo</button>
+                <div id="resultado-try-catch" class="resultado"></div>
+            </div>
+
+            <div class="subsection">
+                <h3>1.4. Objetos Error</h3>
+                <div class="code-container">
+                    <pre><code>function dividir(a, b) {
+    if (b === 0) {
+        throw new Error("No se puede dividir por cero");
+    }
+    return a / b;
+}</code></pre>
+                </div>
+                <button onclick="ejemploErrorObj()">Ejecutar Ejemplo</button>
+                <div id="resultado-error-obj" class="resultado"></div>
+            </div>
+        </section>
+
+        <!-- Bucles e Iteración -->
+        <section id="bucles">
+            <h2>2. Bucles e Iteración</h2>
+            
+            <div class="subsection">
+                <h3>2.1. for</h3>
+                <div class="code-container">
+                    <pre><code>for (let i = 0; i < 5; i++) {
+    console.log("Iteración: " + i);
+}</code></pre>
+                </div>
+                <button onclick="ejemploFor()">Ejecutar Ejemplo</button>
+                <div id="resultado-for" class="resultado"></div>
+            </div>
+
+            <div class="subsection">
+                <h3>2.2. while</h3>
+                <div class="code-container">
+                    <pre><code>let contador = 0;
+while (contador < 5) {
+    console.log("Contador: " + contador);
+    contador++;
+}</code></pre>
+                </div>
+                <button onclick="ejemploWhile()">Ejecutar Ejemplo</button>
+                <div id="resultado-while" class="resultado"></div>
+            </div>
+
+            <div class="subsection">
+                <h3>2.3. do...while</h3>
+                <div class="code-container">
+                    <pre><code>let i = 0;
+do {
+    console.log("Valor: " + i);
+    i++;
+} while (i < 5);</code></pre>
+                </div>
+                <button onclick="ejemploDoWhile()">Ejecutar Ejemplo</button>
+                <div id="resultado-do-while" class="resultado"></div>
+            </div>
+        </section>
+
+        <!-- Funciones -->
+        <section id="funciones">
+            <h2>3. Funciones</h2>
+            
+            <div class="subsection">
+                <h3>3.1. Definir Funciones</h3>
+                <div class="code-container">
+                    <pre><code>// Función declarativa
+function saludar(nombre) {
+    return "Hola, " + nombre + "!";
+}
+
+// Función expresión
+const despedir = function(nombre) {
+    return "Adiós, " + nombre + "!";
+};
+
+// Función flecha
+const sumar = (a, b) => a + b;</code></pre>
+                </div>
+                <button onclick="ejemploDefinirFunciones()">Ejecutar Ejemplo</button>
+                <div id="resultado-definir-funciones" class="resultado"></div>
+            </div>
+
+            <div class="subsection">
+                <h3>3.2. Llamar Funciones</h3>
+                <div class="code-container">
+                    <pre><code>function calcularArea(base, altura) {
+    return (base * altura) / 2;
+}
+
+let area = calcularArea(10, 5);
+console.log("Área del triángulo: " + area);</code></pre>
+                </div>
+                <button onclick="ejemploLlamarFunciones()">Ejecutar Ejemplo</button>
+                <div id="resultado-llamar-funciones" class="resultado"></div>
+            </div>
+        </section>
+
+        <!-- Expresiones y Operadores -->
+        <section id="operadores">
+            <h2>4. Expresiones y Operadores</h2>
+            
+            <div class="subsection">
+                <h3>4.1. Asignación y Comparación</h3>
+                <div class="code-container">
+                    <pre><code>// Asignación
+let x = 10;
+x += 5;  // x = 15
+x -= 3;  // x = 12
+
+// Comparación
+console.log(5 == "5");   // true (comparación de valor)
+console.log(5 === "5");  // false (comparación estricta)
+console.log(10 > 5);     // true
+console.log(10 <= 10);   // true</code></pre>
+                </div>
+                <button onclick="ejemploAsignacionComparacion()">Ejecutar Ejemplo</button>
+                <div id="resultado-asignacion" class="resultado"></div>
+            </div>
+
+            <div class="subsection">
+                <h3>4.2. Operadores Aritméticos</h3>
+                <div class="code-container">
+                    <pre><code>let a = 10, b = 3;
+console.log("Suma: " + (a + b));           // 13
+console.log("Resta: " + (a - b));          // 7
+console.log("Multiplicación: " + (a * b)); // 30
+console.log("División: " + (a / b));       // 3.333...
+console.log("Módulo: " + (a % b));         // 1
+console.log("Potencia: " + (a ** b));      // 1000</code></pre>
+                </div>
+                <button onclick="ejemploAritmeticos()">Ejecutar Ejemplo</button>
+                <div id="resultado-aritmeticos" class="resultado"></div>
+            </div>
+
+            <div class="subsection">
+                <h3>4.3. Operadores Lógicos</h3>
+                <div class="code-container">
+                    <pre><code>let verdadero = true, falso = false;
+console.log(verdadero && falso);  // false (AND)
+console.log(verdadero || falso);  // true (OR)
+console.log(!verdadero);          // false (NOT)
+console.log(10 > 5 && 20 < 30);   // true</code></pre>
+                </div>
+                <button onclick="ejemploLogicos()">Ejecutar Ejemplo</button>
+                <div id="resultado-logicos" class="resultado"></div>
+            </div>
+        </section>
+
+        <!-- Números y Fechas -->
+        <section id="numeros-fechas">
+            <h2>5. Números y Fechas</h2>
+            
+            <div class="subsection">
+                <h3>5.1. Objeto Number</h3>
+                <div class="code-container">
+                    <pre><code>let num = 123.456;
+console.log(num.toFixed(2));        // "123.46"
+console.log(num.toPrecision(4));    // "123.5"
+console.log(Number.isInteger(10));  // true
+console.log(Number.isNaN(NaN));     // true
+console.log(Number.MAX_VALUE);      // 1.7976931348623157e+308</code></pre>
+                </div>
+                <button onclick="ejemploNumber()">Ejecutar Ejemplo</button>
+                <div id="resultado-number" class="resultado"></div>
+            </div>
+
+            <div class="subsection">
+                <h3>5.2. Objeto Math</h3>
+                <div class="code-container">
+                    <pre><code>console.log(Math.PI);              // 3.14159...
+console.log(Math.round(4.7));      // 5
+console.log(Math.ceil(4.2));       // 5
+console.log(Math.floor(4.8));      // 4
+console.log(Math.random());        // Número aleatorio entre 0 y 1
+console.log(Math.max(1, 5, 3));    // 5
+console.log(Math.pow(2, 3));       // 8</code></pre>
+                </div>
+                <button onclick="ejemploMath()">Ejecutar Ejemplo</button>
+                <div id="resultado-math" class="resultado"></div>
+            </div>
+
+            <div class="subsection">
+                <h3>5.3. Objeto Date</h3>
+                <div class="code-container">
+                    <pre><code>let fecha = new Date();
+console.log(fecha.toString());
+console.log(fecha.getFullYear());
+console.log(fecha.getMonth() + 1);
+console.log(fecha.getDate());
+console.log(fecha.getHours() + ":" + fecha.getMinutes());</code></pre>
+                </div>
+                <button onclick="ejemploDate()">Ejecutar Ejemplo</button>
+                <div id="resultado-date" class="resultado"></div>
+            </div>
+        </section>
+
+        <!-- Formateo de Texto -->
+        <section id="formateo-texto">
+            <h2>6. Formateo de Texto</h2>
+            
+            <div class="subsection">
+                <h3>6.1. Cadenas Literales</h3>
+                <div class="code-container">
+                    <pre><code>let nombre = "Juan";
+let edad = 25;
+
+// Template literals
+let mensaje = `Hola, mi nombre es ${nombre} y tengo ${edad} años`;
+
+// Cadenas multilínea
+let parrafo = `Esta es una línea
+Esta es otra línea
+Y esta es la tercera línea`;</code></pre>
+                </div>
+                <button onclick="ejemploCadenasLiterales()">Ejecutar Ejemplo</button>
+                <div id="resultado-cadenas" class="resultado"></div>
+            </div>
+
+            <div class="subsection">
+                <h3>6.2. Objeto String</h3>
+                <div class="code-container">
+                    <pre><code>let texto = "JavaScript es genial";
+console.log(texto.length);              // 20
+console.log(texto.toUpperCase());       // "JAVASCRIPT ES GENIAL"
+console.log(texto.toLowerCase());       // "javascript es genial"
+console.log(texto.substring(0, 10));    // "JavaScript"
+console.log(texto.split(" "));          // ["JavaScript", "es", "genial"]
+console.log(texto.includes("genial"));  // true
+console.log(texto.replace("genial", "increíble"));</code></pre>
+                </div>
+                <button onclick="ejemploString()">Ejecutar Ejemplo</button>
+                <div id="resultado-string" class="resultado"></div>
+            </div>
+        </section>
+
+        <!-- Colecciones Indexadas -->
+        <section id="colecciones">
+            <h2>7. Colecciones Indexadas</h2>
+            
+            <div class="subsection">
+                <h3>7.1. Arreglos</h3>
+                <div class="code-container">
+                    <pre><code>let frutas = ["manzana", "banana", "naranja"];
+console.log(frutas[0]);           // "manzana"
+frutas.push("uva");               // Agregar al final
+frutas.pop();                     // Eliminar del final
+frutas.unshift("fresa");          // Agregar al inicio
+console.log(frutas.length);       // 4
+
+// Métodos de arrays
+let numeros = [1, 2, 3, 4, 5];
+let dobles = numeros.map(n => n * 2);
+let pares = numeros.filter(n => n % 2 === 0);
+let suma = numeros.reduce((acc, n) => acc + n, 0);</code></pre>
+                </div>
+                <button onclick="ejemploArreglos()">Ejecutar Ejemplo</button>
+                <div id="resultado-arreglos" class="resultado"></div>
+            </div>
+
+            <div class="subsection">
+                <h3>7.2. Arreglos Tipados</h3>
+                <div class="code-container">
+                    <pre><code>// Int8Array: enteros de 8 bits con signo (-128 a 127)
+let int8 = new Int8Array([1, 2, 3, 4, 5]);
+
+// Uint8Array: enteros de 8 bits sin signo (0 a 255)
+let uint8 = new Uint8Array([10, 20, 30]);
+
+// Float32Array: números de punto flotante de 32 bits
+let float32 = new Float32Array([1.5, 2.5, 3.5]);
+
+console.log(int8);
+console.log(uint8);
+console.log(float32);</code></pre>
+                </div>
+                <button onclick="ejemploArreglosTipados()">Ejecutar Ejemplo</button>
+                <div id="resultado-arreglos-tipados" class="resultado"></div>
+            </div>
+        </section>
+
+        <!-- DOM -->
+        <section id="dom">
+            <h2>8. Manipulación del DOM</h2>
+            
+            <div class="subsection">
+                <h3>8.1. Encontrar Elementos por ID</h3>
+                <div class="code-container">
+                    <pre><code>let elemento = document.getElementById("miElemento");
+elemento.style.color = "red";</code></pre>
+                </div>
+                <div class="demo-area">
+                    <p id="elemento-id">Este texto cambiará de color</p>
+                    <button onclick="ejemploGetElementById()">Ejecutar Ejemplo</button>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>8.2. Encontrar Elementos por Nombre de Etiqueta</h3>
+                <div class="code-container">
+                    <pre><code>let parrafos = document.getElementsByTagName("p");
+for (let p of parrafos) {
+    p.style.fontWeight = "bold";
+}</code></pre>
+                </div>
+                <div class="demo-area">
+                    <p class="demo-paragraph">Párrafo 1</p>
+                    <p class="demo-paragraph">Párrafo 2</p>
+                    <p class="demo-paragraph">Párrafo 3</p>
+                    <button onclick="ejemploGetElementsByTagName()">Ejecutar Ejemplo</button>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>8.3. Encontrar Elementos por Nombre de Clase</h3>
+                <div class="code-container">
+                    <pre><code>let elementos = document.getElementsByClassName("miClase");
+for (let elem of elementos) {
+    elem.style.backgroundColor = "yellow";
+}</code></pre>
+                </div>
+                <div class="demo-area">
+                    <div class="demo-class">Elemento 1</div>
+                    <div class="demo-class">Elemento 2</div>
+                    <div class="demo-class">Elemento 3</div>
+                    <button onclick="ejemploGetElementsByClassName()">Ejecutar Ejemplo</button>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>8.4. Encontrar Elementos mediante Selectores CSS</h3>
+                <div class="code-container">
+                    <pre><code>// querySelector - encuentra el primer elemento
+let primero = document.querySelector(".selector");
+
+// querySelectorAll - encuentra todos los elementos
+let todos = document.querySelectorAll(".selector");
+todos.forEach(elem => {
+    elem.style.border = "2px solid blue";
+});</code></pre>
+                </div>
+                <div class="demo-area">
+                    <div class="demo-selector">Selector 1</div>
+                    <div class="demo-selector">Selector 2</div>
+                    <div class="demo-selector">Selector 3</div>
+                    <button onclick="ejemploQuerySelector()">Ejecutar Ejemplo</button>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>8.5. Encontrar Elementos por Colecciones de Objetos HTML</h3>
+                <div class="code-container">
+                    <pre><code>// document.forms - colección de formularios
+let formularios = document.forms;
+
+// document.images - colección de imágenes
+let imagenes = document.images;
+
+// document.links - colección de enlaces
+let enlaces = document.links;
+
+console.log("Total de formularios: " + formularios.length);
+console.log("Total de imágenes: " + imagenes.length);
+console.log("Total de enlaces: " + enlaces.length);</code></pre>
+                </div>
+                <div class="demo-area">
+                    <form id="demo-form">
+                        <input type="text" placeholder="Nombre">
+                        <input type="email" placeholder="Email">
+                    </form>
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50'%3E%3Crect fill='%234CAF50' width='50' height='50'/%3E%3C/svg%3E" alt="Demo">
+                    <a href="#" class="demo-link">Enlace de demostración</a>
+                    <button onclick="ejemploColeccionesHTML()">Ejecutar Ejemplo</button>
+                </div>
+                <div id="resultado-colecciones-html" class="resultado"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Tarea 5: JavaScript - ISW-512 Diseño de Aplicaciones Web</p>
+        <p>Universidad: Universidad Técnica Nacional | Estudiante: Manuel</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

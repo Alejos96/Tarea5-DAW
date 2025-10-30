@@ -1,0 +1,23 @@
+# Sistema Operativo
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporales
+*.tmp
+*.temp
+*.log
+
+# Node (por si se usa en el futuro)
+node_modules/
+package-lock.json
+
+# Otros
+*.zip
+*.rar
